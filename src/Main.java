@@ -1,20 +1,19 @@
-import java.util.Locale;
 import java.util.Scanner;
-//Hola desde la rama
 public class Main {
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+    public static void main(String[] args) {
+        final double TASA_IVA= 0.19;
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("¿Como te llamas? ");
-        String nombre = sc.nextLine();
+        System.out.print("¿Cuanto es el precio del producto? : ");
+        double precio = scanner.nextDouble();
 
-        System.out.print("¿Cuantos años tienes? ");
-        int edad = sc.nextInt();
+        double iva = precio*TASA_IVA;
+        double total = precio+iva;
 
-        System.out.print("¿Cuanto mides? ");
-        double altura = sc.nextDouble();
-        System.out.println("Hola "+nombre+" el proximo año tendras "+ (edad+1)+" años y mides "+altura+" cm");
-        sc.close();
+        System.out.printf("El subtotal del producto es: %.2f%n", precio);
+        System.out.printf("El iva del producto es: %.2f%n", iva);
+        System.out.printf("El precio total del producto es: %.2f%n", total);
+        scanner.close();
 
 
     }
